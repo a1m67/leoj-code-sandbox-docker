@@ -3,14 +3,11 @@ package com.le.leojcodesandbox;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ResourceUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.dfa.FoundWord;
 import cn.hutool.dfa.WordTree;
 import com.le.leojcodesandbox.model.ExecuteCodeRequest;
 import com.le.leojcodesandbox.model.ExecuteCodeResponse;
 import com.le.leojcodesandbox.model.ExecuteMessage;
 import com.le.leojcodesandbox.model.JudgeInfo;
-import com.le.leojcodesandbox.security.DefaultSecurityManager;
-import com.le.leojcodesandbox.security.DenySecurityManager;
 import com.le.leojcodesandbox.utils.ProcessUtils;
 
 import java.io.File;
@@ -160,11 +157,7 @@ public class JavaNativeCodeSandBox implements CodeSandBox {
             boolean del = FileUtil.del(userCodeFile);
             System.out.println("删除"+ (del ? "成功" : "失败"));
         }
-
-
-
-
-        return null;
+        return executeCodeResponse;
     }
 
     /**
